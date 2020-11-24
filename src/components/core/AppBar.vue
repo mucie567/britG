@@ -4,13 +4,22 @@
       color="#474069"
       dense
       dark
-      height="90"
+      height="60"
     >
-      <v-toolbar-title><v-img
-  max-height="48"
-  max-width="100"
-  src="https://britg.kr/wp-content/themes/britg/img/gnb-logo.png?ver=0619"
-></v-img></v-toolbar-title>
+      <v-toolbar-title><router-link to="/"> 
+        <v-img
+    :src="require('../../assets/logo.png')" alt="logo" contain
+  ></v-img>
+      </router-link></v-toolbar-title>
+
+    
+        <router-link to="/gnbmenu" class="menu">작품</router-link>
+        <router-link to="/gnbmenu" class="menu">리뷰</router-link>
+        <router-link to="/gnbmenu" class="menu">문학상</router-link>
+        <router-link to="/gnbmenu" class="menu">프로젝트</router-link>
+        <router-link to="/gnbmenu" class="menu">이벤트&커뮤니티</router-link>
+        <router-link to="/gnbmenu" class="menu shop">SHOP</router-link>
+
 
       <v-spacer></v-spacer>
 
@@ -74,4 +83,26 @@
 </script>
 
 <style lang="scss" scoped>
+
+    .menu{
+      display: inline-block;
+      font-size: 20px;
+      color: #fff;
+      padding-left: 80px;
+    }
+
+
+    .shop{
+      position: relative;
+      &:after{
+        position: absolute;
+        top: 0;
+        right: -35px;
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: url('https://britg.kr/wp-content/themes/britg/img/coin-gnb-icon.png') no-repeat 0 0;
+      }
+    }
 </style>
